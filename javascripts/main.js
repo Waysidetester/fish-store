@@ -1,4 +1,12 @@
-let arrayOfFish = [];
+const discount = .12;
+
+const applySale = () => {
+    $(".on-sale").each((i, fish) => {
+        const fullPrice = $(fish).find(".price");
+        const newPrice = (parseInt(fullPrice.html())*(1-discount)).toFixed(2);
+        fullPrice.html(newPrice);
+    })
+};
 
 // Filter fish that are "on sale"
 
@@ -6,7 +14,7 @@ let arrayOfFish = [];
 $.get("../db/fishes.json")
  .done((data) => {
      writeFish(data.fishes);
-
+     applySale();
  })
  .fail((error) => {
       console.error({error});
@@ -63,6 +71,7 @@ const removeBasket = () => {
         toggler();
         $(event.target).text("Add to Basket");
     })
+    // if ($("#available").children().filter(".non-sale").style.display !== none;)
 };
 
 const bindEvents = () => {
