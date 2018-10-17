@@ -35,7 +35,7 @@ const writeFish = (arrayOfFish) => {
             <div class="caption">
                 <h3 id="thumbnail-label">${fish.name}</h3>
                 <p>$
-                    <span class="price">${fish.basePrice}</span>
+                    <span class="price">${parseInt(fish.basePrice).toFixed(2)}</span>
                 </p>
             </div>
                 <div class="caption card-footer">
