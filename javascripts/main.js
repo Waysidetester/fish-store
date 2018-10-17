@@ -78,5 +78,12 @@ const onSaleButtton = () => {
         $("#available").children().filter(".non-sale").toggle();
         // hides all non for sale regardless of basket status
         // $(".fish").not(".on-sale").toggle(); 
+        $("#show-sale").text((i, text) => {
+            if (text === "Show Fish For Sale") {
+                return "Show All";
+            } else {
+                return "Show Fish For Sale";
+            }
+        })
     });
 };
